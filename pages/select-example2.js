@@ -2,7 +2,7 @@ import React from "react";
 
 import SelectForm from '../src/components/select-form';
 import ProfileDisplay from '../src/components/profile-display';
-
+import PrintHello from '../src/components/print-hello'
 const data = [
   {
     name: "Adaniya",
@@ -40,6 +40,7 @@ class SelectExample extends React.Component {
     const { selectedProfile } = this.state;
     return (
       <div>
+        <PrintHello /> 
         <SelectForm
           data={data}
         />
