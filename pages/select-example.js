@@ -27,13 +27,18 @@ class SelectExample extends React.Component {
 
     this.handleSelectChange = e => {
       console.log(e.target.value);
-      var i = 0;
-      while (i < 3) {
-        if(e.target.value==data[i].name){
-          this.setState({ selectedProfile: data[i] })
+      function checkName(d) {
+        if(d.name==e.target.value){
+          return true;
         }
-        i++;
       }
+
+      const selectedName = data.filter(d => checkName(d))[0]
+
+      this.setState({
+        selectedProfile: selectedName,
+      })
+      
     }
   }
 
