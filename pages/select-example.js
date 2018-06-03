@@ -27,6 +27,9 @@ class SelectExample extends React.Component {
 
     this.handleSelectChange = e => {
       console.log(e.target.value);
+      const name = e.target.value;
+      const selectedProfile = data.filter(d => d.name === name)[0];
+      this.setState({ selectedProfile });
     }
   }
 
