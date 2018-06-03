@@ -22,16 +22,18 @@ class SelectExample extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedProfile: data[0]
+      selectedProfileId: 0
     };
 
     this.handleSelectChange = e => {
       console.log(e.target.value);
+      this.setState({ selectedProfileId: e.target.value });
     }
   }
 
   render(){
-    const { selectedProfile } = this.state;
+    const { selectedProfileId } = this.state;
+    const profile = data[selectedProfileId];
     return (
       <div>
         <form>
@@ -39,13 +41,13 @@ class SelectExample extends React.Component {
             <span>Select name</span>
             <select
               name="profile"
-              value={selectedProfile.name}
+              value={selectedProfileId}
               onChange={this.handleSelectChange}
               >
-              {data.map((d, index) =>
+              {data.map((p, index) =>
                 <option
                   key={index}
-                  value={d.name}>{d.name}</option>
+                  value={index}>{p.name}</option>
               )}
             </select>
           </label>
@@ -55,17 +57,17 @@ class SelectExample extends React.Component {
             <div>
               <span>Name</span>
               <span>:</span>
-              <span>{selectedProfile.name}</span>
+              <span>{profile.name}</span>
             </div>
             <div>
               <span>Age</span>
               <span>:</span>
-              <span>{selectedProfile.age}</span>
+              <span>{profile.age}</span>
             </div>
             <div>
               <span>Sex</span>
               <span>:</span>
-              <span>{selectedProfile.sex}</span>
+              <span>{profile.sex}</span>
             </div>
             <div></div>
         </div>
