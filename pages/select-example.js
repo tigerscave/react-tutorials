@@ -27,10 +27,12 @@ class SelectExample extends React.Component {
 
     this.handleSelectChange = e => {
       console.log(e.target.value);
-      for (var i = 0; i < 3; i++) {
+      var i = 0;
+      while (i < 3) {
         if(e.target.value==data[i].name){
           this.setState({ selectedProfile: data[i] })
         }
+        i++;
       }
     }
   }
