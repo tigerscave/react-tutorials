@@ -10,6 +10,11 @@ const Index = () => {
             <a>select-example</a>
           </Link>
         </li>
+        <li>
+          <Link href="/select-example2">
+            <a>select-example2</a>
+          </Link>
+        </li>
       </ul>
       <style jsx>{`
         h1 {
